@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Battle Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<title>Ravin Battle Royale</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="lobby">
-  <h1>Ravin Battle Game</h1>
-  <p>Mobile Web Shooting Game</p>
-  <button onclick="startGame()">START GAME</button>
+  <div class="hero">
+    <h1>RAVIN BATTLE ROYALE</h1>
+    <p>Survive • Fight • Win</p>
+    <button onclick="startDrop()">START MATCH</button>
+  </div>
+</div>
+
+<div id="dropScene">
+  <div class="sky">
+    <div class="plane">✈️</div>
+    <div id="jumper">🪂</div>
+    <h2 id="dropText">Flying over battle island...</h2>
+  </div>
 </div>
 
 <div id="gameArea">
-  <div id="healthBox">
-    Health: <span id="health">100</span>
-  </div>
-
-  <div id="inventory">
-    Gun: <span id="gunName">Pistol</span> |
-    Ammo: <span id="ammo">30</span>
+  <div id="topBar">
+    <span>❤️ HP: <b id="health">100</b></span>
+    <span>🔫 Gun: <b>Pistol</b></span>
+    <span>🎒 Ammo: <b id="ammo">30</b></span>
   </div>
 
   <canvas id="gameCanvas"></canvas>
 
   <div id="controls">
-    <button ontouchstart="moveUp=true" ontouchend="moveUp=false">▲</button>
-    <div>
-      <button ontouchstart="moveLeft=true" ontouchend="moveLeft=false">◀</button>
-      <button ontouchstart="moveDown=true" ontouchend="moveDown=false">▼</button>
-      <button ontouchstart="moveRight=true" ontouchend="moveRight=false">▶</button>
+    <div class="move">
+      <button ontouchstart="up=true" ontouchend="up=false">▲</button>
+      <div>
+        <button ontouchstart="left=true" ontouchend="left=false">◀</button>
+        <button ontouchstart="down=true" ontouchend="down=false">▼</button>
+        <button ontouchstart="right=true" ontouchend="right=false">▶</button>
+      </div>
     </div>
-    <button onclick="shoot()">🔥</button>
+
+    <button class="fire" onclick="shoot()">🔥</button>
   </div>
 </div>
 
