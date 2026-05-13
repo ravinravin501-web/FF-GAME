@@ -1,62 +1,93 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
 }
 
-body{
-  background:#000;
-  overflow:hidden;
-  font-family:Arial, sans-serif;
+body {
+  background: #111;
+  color: white;
+  overflow: hidden;
 }
 
-#startScreen{
-  width:100vw;
-  height:100vh;
-  background:linear-gradient(135deg,#000,#001b3a,#003cff);
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+#lobby {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #000, #7a0000, #d40000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
 }
 
-#startScreen h1{
-  font-size:42px;
-  color:#00d9ff;
-  text-shadow:0 0 25px #00d9ff;
-  margin-bottom:15px;
+#lobby h1 {
+  font-size: 38px;
+  color: red;
+  text-shadow: 0 0 15px black;
 }
 
-#startScreen p{
-  font-size:18px;
-  margin:6px 0;
+#lobby button {
+  padding: 18px 45px;
+  border: none;
+  border-radius: 15px;
+  background: red;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-button{
-  margin:25px 0;
-  padding:16px 45px;
-  border:none;
-  border-radius:35px;
-  background:#ffcc00;
-  color:#000;
-  font-weight:bold;
-  font-size:20px;
-  cursor:pointer;
-  box-shadow:0 0 20px #ffcc00;
+#gameArea {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #222;
 }
 
-.controls{
-  margin-top:20px;
-  background:rgba(0,0,0,0.45);
-  padding:18px;
-  border-radius:18px;
-  border:1px solid #00d9ff;
+canvas {
+  width: 100%;
+  height: 100%;
+  background: #2d5c2d;
 }
 
-canvas{
-  display:none;
-  background:#237a35;
-  }
+#healthBox, #inventory {
+  position: absolute;
+  top: 15px;
+  background: black;
+  padding: 10px 15px;
+  border-radius: 10px;
+  z-index: 10;
+  border: 2px solid red;
+}
+
+#healthBox {
+  left: 15px;
+}
+
+#inventory {
+  right: 15px;
+}
+
+#controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#controls button {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: none;
+  background: red;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 5px;
+}
