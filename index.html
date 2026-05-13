@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Battle Fire Max</title>
-<link rel="stylesheet" href="style.css">
+  <title>Battle Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="startScreen">
-  <h1>🔥 BATTLE FIRE MAX 🔥</h1>
-  <p>Survival Shooting Web Game</p>
+<div id="lobby">
+  <h1>Ravin Battle Game</h1>
+  <p>Mobile Web Shooting Game</p>
   <button onclick="startGame()">START GAME</button>
-
-  <div class="controls">
-    <p>Move: WASD / Arrow Keys</p>
-    <p>Shoot: Mouse Click / Tap</p>
-    <p>Guns: 1 Pistol | 2 SMG | 3 Shotgun | 4 Sniper</p>
-    <p>Reload: R</p>
-  </div>
 </div>
 
-<canvas id="gameCanvas"></canvas>
+<div id="gameArea">
+  <div id="healthBox">
+    Health: <span id="health">100</span>
+  </div>
+
+  <div id="inventory">
+    Gun: <span id="gunName">Pistol</span> |
+    Ammo: <span id="ammo">30</span>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="controls">
+    <button ontouchstart="moveUp=true" ontouchend="moveUp=false">▲</button>
+    <div>
+      <button ontouchstart="moveLeft=true" ontouchend="moveLeft=false">◀</button>
+      <button ontouchstart="moveDown=true" ontouchend="moveDown=false">▼</button>
+      <button ontouchstart="moveRight=true" ontouchend="moveRight=false">▶</button>
+    </div>
+    <button onclick="shoot()">🔥</button>
+  </div>
+</div>
 
 <script src="game.js"></script>
 </body>
